@@ -20,16 +20,16 @@
     var CONFIG = {"hostname":"korruz.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="1. 初识谈到建立网站，总会看到 LAMP 这种典型架构，所以一直好奇，这些是如何配合在一起，为外部用户提供服务。 知乎上搜了一下，看了一篇文章 ，讲的挺好的。部分摘抄如下。  L 代表服务器操作系统使用 Linux，服务器端常用的都是 Linux&#x2F;Unix 衍生过来的。 A 代表网站服务使用的是 Apache 软件基金会中的 httpd 的软件 M 代表网站后台使用的数据库时 MySQL 数据库">
+  <meta name="description" content="本文主要讲解 LAMP 架构。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LAMP架构">
 <meta property="og:url" content="https://korruz.github.io/2022/01/01/LAMP%E6%9E%B6%E6%9E%84/index.html">
 <meta property="og:site_name" content="korruz">
-<meta property="og:description" content="1. 初识谈到建立网站，总会看到 LAMP 这种典型架构，所以一直好奇，这些是如何配合在一起，为外部用户提供服务。 知乎上搜了一下，看了一篇文章 ，讲的挺好的。部分摘抄如下。  L 代表服务器操作系统使用 Linux，服务器端常用的都是 Linux&#x2F;Unix 衍生过来的。 A 代表网站服务使用的是 Apache 软件基金会中的 httpd 的软件 M 代表网站后台使用的数据库时 MySQL 数据库">
+<meta property="og:description" content="本文主要讲解 LAMP 架构。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://korruz.github.io/images/rJAgY2cCAvfQnnF7aee_K_GdP723ZZzv4ey4soFk_kU.jpg">
 <meta property="article:published_time" content="2022-01-01T14:08:59.000Z">
-<meta property="article:modified_time" content="2022-01-09T13:48:38.088Z">
+<meta property="article:modified_time" content="2022-01-10T03:28:34.506Z">
 <meta property="article:author" content="korruz">
 <meta property="article:tag" content="korruz的个人博客">
 <meta name="twitter:card" content="summary">
@@ -209,7 +209,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-09 21:48:38" itemprop="dateModified" datetime="2022-01-09T21:48:38+08:00">2022-01-09</time>
+                <time title="修改时间：2022-01-10 11:28:34" itemprop="dateModified" datetime="2022-01-10T11:28:34+08:00">2022-01-10</time>
               </span>
 
           
@@ -218,7 +218,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>766</span>
+              <span>779</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -237,7 +237,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="1-初识"><a href="#1-初识" class="headerlink" title="1. 初识"></a>1. 初识</h1><p>谈到建立网站，总会看到 LAMP 这种典型架构，所以一直好奇，这些是如何配合在一起，为外部用户提供服务。</p>
+        <blockquote>
+<p>本文主要讲解 LAMP 架构。</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="1-初识"><a href="#1-初识" class="headerlink" title="1. 初识"></a>1. 初识</h1><p>谈到建立网站，总会看到 LAMP 这种典型架构，所以一直好奇，这些是如何配合在一起，为外部用户提供服务。</p>
 <p>知乎上搜了一下，看了<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/90006047">一篇文章</a> ，讲的挺好的。部分摘抄如下。</p>
 <ul>
 <li>L 代表服务器操作系统使用 Linux，服务器端常用的都是 Linux/Unix 衍生过来的。</li>
@@ -245,8 +250,6 @@
 <li>M 代表网站后台使用的数据库时 MySQL 数据库</li>
 <li>P 代表网站是使用 PHP/Perl/Python 等语言开发</li>
 </ul>
-<span id="more"></span>
-
 <p>主要分工如下图：</p>
 <p><img src="/images/rJAgY2cCAvfQnnF7aee_K_GdP723ZZzv4ey4soFk_kU.jpg" alt="image"></p>
 <h1 id="2-上手"><a href="#2-上手" class="headerlink" title="2. 上手"></a>2. 上手</h1><p>B站上找到了一篇关于实战的<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103216527">文章</a> 。我就用我之前在腾讯云买的主机试了试，感觉基本达到了我的目的了。</p>
